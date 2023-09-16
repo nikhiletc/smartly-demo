@@ -1,0 +1,45 @@
+{
+  "name": "smartly-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
+    "format": "prettier --write .",
+    "ts-prune": "ts-prune"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write",
+      "ts-prune --all",
+      "git add ."
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "@types/cypress": "^1.1.3",
+    "allure-commandline": "^2.24.0",
+    "cypress": "^13.2.0",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@cypress/grep": "^4.0.0",
+    "@faker-js/faker": "^8.0.2",
+    "cypress-terminal-report": "^5.3.6",
+    "eslint": "^8.49.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "ts-prune": "^0.10.3"
+  }
+}
