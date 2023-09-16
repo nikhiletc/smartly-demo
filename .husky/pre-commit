@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run ESLint
+npm run lint
+
+# Run Prettier
+npm run format
+
+# All checks passed, allow the commit
+exit 0
