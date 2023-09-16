@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "ts-prune": "ts-prune",
     "prepare": "husky install",
-    "start": "cypress open" 
+    "start": "cypress open"
   },
   "husky": {
     "hooks": {
