@@ -28,7 +28,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.2.0",
+    "cypress": "^12.15.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
