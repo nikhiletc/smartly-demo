@@ -12,8 +12,6 @@ module.exports = defineConfig({
   pageLoadTimeout: 90000,
   requestTimeout: 90000,
   e2e: {
-    setupNodeEvents(on, config) {
-     
-    },
+    setupNodeEvents(on, config) {},
   },
 });
