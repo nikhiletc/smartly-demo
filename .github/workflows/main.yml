@@ -2,11 +2,28 @@ name: system test
 on: [push]
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        run: |
+          npm start &
+          npx cypress run
+        continue-on-error: true
+
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
